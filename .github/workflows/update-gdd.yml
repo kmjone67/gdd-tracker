@@ -1,0 +1,41 @@
+name: Update Princeton TX GDD Log
+
+on:
+  schedule:
+    # GitHub cron is UTC.
+    # 17:00 UTC = noon Central during daylight saving time.
+    # 18:00 UTC = noon Central during standard time.
+    # Running both is fine because the script de-duplicates by date.
+    - cron: "0 17 * * *"
+    - cron: "0 18 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-gdd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update GDD log
+        env:
+          WEATHERAPI_KEY: ${{ secrets.WEATHERAPI_KEY }}
+        run: python scripts/update_gdd.py
+
+      - name: Commit updated log
+        run: |
+          git config user.name "gdd-bot"
+          git config user.email "gdd-bot@users.noreply.github.com"
+          git add data/gdd-log.json
+          git diff --cached --quiet || git commit -m "Update GDD log"
+          git push
