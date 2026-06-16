@@ -6,8 +6,8 @@ on:
     # 17:00 UTC = noon Central during daylight saving time.
     # 18:00 UTC = noon Central during standard time.
     # Running both is fine because the script de-duplicates by date.
-    - cron: "0 17 * * *"
-    - cron: "0 18 * * *"
+    - cron: "37 11 * * *"
+    # - cron: "0 18 * * *"
 
   workflow_dispatch:
 
