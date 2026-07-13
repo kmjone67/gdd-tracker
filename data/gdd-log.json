@@ -214,5 +214,13 @@
     "low_f": 77.9,
     "base_temp_f": 32.0,
     "gdd_base32_f": 55.95
+  },
+  {
+    "date": "2026-07-12",
+    "location": "Princeton, TX",
+    "high_f": 95.4,
+    "low_f": 75.9,
+    "base_temp_f": 32.0,
+    "gdd_base32_f": 53.65
   }
 ]
