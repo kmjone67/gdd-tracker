@@ -1,13 +1,5 @@
 [
   {
-    "date": "2026-10-24",
-    "location": "Princeton, TX",
-    "high_f": 82.7,
-    "low_f": 57.4,
-    "base_temp_f": 32.0,
-    "gdd_base32_f": 38.05
-  },
-  {
     "date": "2026-10-25",
     "location": "Princeton, TX",
     "high_f": 79.2,
@@ -238,5 +230,13 @@
     "low_f": 49.1,
     "base_temp_f": 32.0,
     "gdd_base32_f": 23.65
+  },
+  {
+    "date": "2026-11-23",
+    "location": "Princeton, TX",
+    "high_f": 55.0,
+    "low_f": 42.4,
+    "base_temp_f": 32.0,
+    "gdd_base32_f": 16.7
   }
 ]
